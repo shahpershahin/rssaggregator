@@ -34,8 +34,9 @@ func main() {
 	}))
 
 	v1Router := chi.NewRouter()
-
 	v1Router.Get("/healthz", handlerReadiness) //healtz is just a name which makes me understand that weather the server is running or not
+
+	v1Router.Get("/err", handlerError)
 
 	router.Mount("/v1", v1Router)
 
